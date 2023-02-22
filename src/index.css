@@ -32,3 +32,72 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+.preview {
+  width: 80px;
+  margin-left: 5rem;
+  margin-bottom: 1rem;
+}
+
+.nameLabel {
+  display: flex;
+  gap: 1rem;
+}
+
+.emailLabel {
+  display: flex;
+  gap: 20px;
+}
+
+.phoneLabel {
+  display: flex;
+  gap: 13px;
+}
+
+
+.schoolLabel {
+  display: flex;
+  gap: 1rem;
+}
+
+.studyLabel {
+  display: flex;
+  gap: 23px;
+}
+
+.gradLabel {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.companyLabel {
+  display: flex;
+  gap: 1rem;
+}
+
+.positionLabel {
+  display: flex;
+  gap: 28px;
+}
+
+.jobLabel {
+  display: flex;
+  gap: 13px;
+}
+
+
+.submitGeneral {
+  margin-top: 15px;
+  width: 70px;
+}
+
+.submitEducation {
+  margin-top: 15px;
+  width: 70px;
+}
+
+.submitPractical {
+  margin-top: 15px;
+  width: 70px;
+}

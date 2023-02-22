@@ -16,20 +16,18 @@ function Education() {
     return (
     <div className='education'>
            <h1>Education</h1>
-            <label>
+            <label className='schoolLabel'>
                 School:
                 <input type='text' className='school'></input>
-                <button>Edit</button>
             </label>
-            <label>
-                Title of study:
+            <label className='studyLabel'>
+                Study:
                 <input type='text' className='study'></input>
-                <button>Edit</button>
+                <button className='editEducation'>Edit</button>
             </label>
-            <label>
-                Date of study:
-                <input type='text' className='studyDate'></input>
-                <button>Edit</button>
+            <label className='gradLabel'>
+                Grad Date:
+                <input type='date' className='studyDate'></input>
             </label>
             <input type='submit' className='submitEducation' onClick={MoveArr}></input>
     </div>
@@ -52,20 +50,18 @@ function Practical() {
     return (
     <div className='practical'>
            <h1>Practical</h1>
-            <label>
+            <label className='companyLabel'>
                 Company:
                 <input type='text' className='company'></input>
-                <button>Edit</button>
             </label>
-            <label>
+            <label className='positionLabel'>
                 Position:
                 <input type='text' className='position'></input>
-                <button>Edit</button>
+                <button className='editPractical'>Edit</button>
             </label>
-            <label>
-                Job tasks:
+            <label className='jobLabel'>
+                Job Tasks:
                 <input type='text' className='tasks'></input>
-                <button>Edit</button>
             </label>
             <input type='submit' className='submitPractical' onClick={MoveArr}></input>
         </div>
@@ -79,29 +75,49 @@ function General() {
         const getNameVal = document.querySelector('.name').value;
         const getEmailVal = document.querySelector('.email').value;
         const getPhoneVal = document.querySelector('.phone').value;
+
         nextItem(prev => prev.concat(getNameVal));
         nextItem(prev => prev.concat(getEmailVal));
         nextItem(prev => prev.concat(getPhoneVal));
         console.log(arr);
     }
 
+    function ShowPreview() {
+        //let change = 0; // change back to edit
+        const nameVal = document.querySelector('.name');
+        const getEmailVal = document.querySelector('.email');
+        const getPhoneVal = document.querySelector('.phone');
+        const nameDiv = document.createElement('div');
+        const emailDiv = document.createElement('div');
+        const phoneDiv = document.createElement('div');
+        nameVal.parentNode.replaceChild(nameDiv, nameVal);
+        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
+        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
+        nameDiv.classList.add('name');
+        phoneDiv.classList.add('phone');
+        emailDiv.classList.add('email');
+        console.log(arr[0]); // trying to change textfield to div with input
+        nameDiv.textContent = arr[0];
+        phoneDiv.textContent = arr[1];
+        emailDiv.textContent = arr[2];
+    }
+
     return (
         <div className='general'>
+           <button className='preview' onClick={ShowPreview}>Preview</button>
            <h1>General</h1>
-            <label>
+            <label className='nameLabel'>
                 Name:
                 <input type='text' className='name'></input>
-                <button>Edit</button>
             </label>
-            <label>
+            <label className='emailLabel'>
                 Email:
                 <input type='text' className='email'></input>
-                <button>Edit</button>
+                <button className='editGeneral'>Edit</button>
             </label>
-            <label>
+            <label className='phoneLabel'>
                 Phone:
                 <input type='text' className='phone'></input>
-                <button>Edit</button>
             </label>
             <input type='submit' className='submitGeneral' onClick={MoveArr}></input>
             <Education />
