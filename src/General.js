@@ -94,6 +94,17 @@ function General() {
             nextItem(prev => prev.concat(getEmailVal));
             nextItem(prev => prev.concat(getPhoneVal));
         }
+        if (!arr[0]) {
+            nextItem(prev => prev.concat(getNameVal));
+            arr.splice(0, 1 ,getNameVal);
+        }
+        if (!arr[1]) {
+            console.log(getEmailVal)
+            arr.splice(1, 1, getEmailVal);
+        }
+        if (!arr[2]) {
+            arr.splice(2, 1, getPhoneVal);
+        }
         console.log(arr);
     }
 
