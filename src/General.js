@@ -69,21 +69,37 @@ function Practical() {
 }
 
 function General() {
-    const [arr, nextItem] = React.useState([]);
+    let [arr, nextItem] = React.useState([]);
 
     function MoveArr() {
         const getNameVal = document.querySelector('.name').value;
         const getEmailVal = document.querySelector('.email').value;
         const getPhoneVal = document.querySelector('.phone').value;
 
-        nextItem(prev => prev.concat(getNameVal));
-        nextItem(prev => prev.concat(getEmailVal));
-        nextItem(prev => prev.concat(getPhoneVal));
+        if (arr[0] && getNameVal !== undefined) {
+            console.log(getNameVal);
+            arr.splice(0, 1, getNameVal);
+            //nextItem(prev => prev.concat(getNameVal));
+        }
+        if (arr[1] && getEmailVal !== undefined) {
+            arr.splice(1, 1, getEmailVal);
+            //nextItem(prev => prev.concat(getEmailVal));
+        }
+        if (arr[2] && getPhoneVal !== undefined) {
+            arr.splice(2, 1, getPhoneVal);
+            //nextItem(prev => prev.concat(getPhoneVal));
+        }
+        if (!arr[0] && !arr[1] && !arr[2]) {
+            nextItem(prev => prev.concat(getNameVal));
+            nextItem(prev => prev.concat(getEmailVal));
+            nextItem(prev => prev.concat(getPhoneVal));
+        }
         console.log(arr);
     }
 
     function ShowPreview() {
-        //let change = 0; // change back to edit
+        console.log(arr);
+        // change back to edit by making a new function
         const nameVal = document.querySelector('.name');
         const getEmailVal = document.querySelector('.email');
         const getPhoneVal = document.querySelector('.phone');
@@ -96,10 +112,28 @@ function General() {
         nameDiv.classList.add('name');
         phoneDiv.classList.add('phone');
         emailDiv.classList.add('email');
-        console.log(arr[0]); // trying to change textfield to div with input
+        // trying to change textfield to div with input
         nameDiv.textContent = arr[0];
-        phoneDiv.textContent = arr[1];
-        emailDiv.textContent = arr[2];
+        emailDiv.textContent = arr[1];
+        phoneDiv.textContent = arr[2];
+    }
+
+    function OpenTextBox() {
+        const nameVal = document.querySelector('.name');
+        const getEmailVal = document.querySelector('.email');
+        const getPhoneVal = document.querySelector('.phone');
+        const nameDiv = document.createElement('input');
+        const emailDiv = document.createElement('input');
+        const phoneDiv = document.createElement('input');
+        nameVal.parentNode.replaceChild(nameDiv, nameVal);
+        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
+        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
+        nameDiv.classList.add('name');
+        phoneDiv.classList.add('phone');
+        emailDiv.classList.add('email');
+        nameDiv.value = arr[0];
+        emailDiv.value = arr[1];
+        phoneDiv.value = arr[2];
     }
 
     return (
@@ -113,7 +147,7 @@ function General() {
             <label className='emailLabel'>
                 Email:
                 <input type='text' className='email'></input>
-                <button className='editGeneral'>Edit</button>
+                <button className='editGeneral' onClick={OpenTextBox}>Edit</button>
             </label>
             <label className='phoneLabel'>
                 Phone:
