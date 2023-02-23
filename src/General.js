@@ -4,13 +4,57 @@ function Education() {
     const [arr, nextItem] = React.useState([]);
 
     function MoveArr() {
-        const schoolVal = document.querySelector('.school').value;
-        const studyVal = document.querySelector('.study').value;
-        const studyDateVal = document.querySelector('.studyDate').value;
-        nextItem(prev => prev.concat(schoolVal));
-        nextItem(prev => prev.concat(studyVal));
-        nextItem(prev => prev.concat(studyDateVal));
+        const school = document.querySelector('.school').value;
+        const study = document.querySelector('.study').value;
+        const studyDate = document.querySelector('.studyDate').value;
+
+        if (arr[0] && school !== undefined) {
+            console.log(school);
+            arr.splice(0, 1, school);
+            //nextItem(prev => prev.concat(getNameVal));
+        }
+        if (arr[1] && study !== undefined) {
+            arr.splice(1, 1, study);
+            //nextItem(prev => prev.concat(getEmailVal));
+        }
+        if (arr[2] && studyDate !== undefined) {
+            arr.splice(2, 1, studyDate);
+            //nextItem(prev => prev.concat(getPhoneVal));
+        }
+        if (!arr[0] && !arr[1] && !arr[2]) {
+            nextItem(prev => prev.concat(school))
+            nextItem(prev => prev.concat(study))
+            nextItem(prev => prev.concat(studyDate))
+        }
+        if (!arr[0]) {
+            arr.splice(0, 1, school);
+        }
+        if (!arr[1]) {
+            console.log(study)
+            arr.splice(1, 1, study);
+        }
+        if (!arr[2]) {
+            arr.splice(2, 1, studyDate);
+        }
         console.log(arr);
+    }
+
+    function OpenTextBox() {
+        const nameVal = document.querySelector('.school');
+        const getEmailVal = document.querySelector('.study');
+        const getPhoneVal = document.querySelector('.studyDate');
+        const nameDiv = document.createElement('input');
+        const emailDiv = document.createElement('input');
+        const phoneDiv = document.createElement('input');
+        nameVal.parentNode.replaceChild(nameDiv, nameVal);
+        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
+        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
+        nameDiv.classList.add('school');
+        emailDiv.classList.add('study');
+        phoneDiv.classList.add('studyDate');
+        nameDiv.value = arr[0];
+        emailDiv.value = arr[1];
+        phoneDiv.value = arr[2];
     }
 
     return (
@@ -23,7 +67,7 @@ function Education() {
             <label className='studyLabel'>
                 Study:
                 <input type='text' className='study'></input>
-                <button className='editEducation'>Edit</button>
+                <button className='editEducation' onClick={OpenTextBox}>Edit</button>
             </label>
             <label className='gradLabel'>
                 Grad Date:
@@ -38,13 +82,54 @@ function Practical() {
     const [arr, nextItem] = React.useState([]);
 
     function MoveArr() {
-        const companyVal = document.querySelector('.company').value;
-        const positionVal = document.querySelector('.position').value;
-        const tasksVal = document.querySelector('.tasks').value;
-        nextItem(prev => prev.concat(companyVal));
-        nextItem(prev => prev.concat(positionVal));
-        nextItem(prev => prev.concat(tasksVal));
+        const getNameVal = document.querySelector('.company').value;
+        const getEmailVal = document.querySelector('.position').value;
+        const getPhoneVal = document.querySelector('.tasks').value;
+
+        if (arr[0] && getNameVal !== undefined) {
+            console.log(getNameVal);
+            arr.splice(0, 1, getNameVal);
+        }
+        if (arr[1] && getEmailVal !== undefined) {
+            arr.splice(1, 1, getEmailVal);
+        }
+        if (arr[2] && getPhoneVal !== undefined) {
+            arr.splice(2, 1, getPhoneVal);
+        }
+        if (!arr[0] && !arr[1] && !arr[2]) {
+            nextItem(prev => prev.concat(getNameVal));
+            nextItem(prev => prev.concat(getEmailVal));
+            nextItem(prev => prev.concat(getPhoneVal));
+        }
+        if (!arr[0]) {
+            arr.splice(0, 1, getNameVal);
+        }
+        if (!arr[1]) {
+            console.log(getEmailVal)
+            arr.splice(1, 1, getEmailVal);
+        }
+        if (!arr[2]) {
+            arr.splice(2, 1, getPhoneVal);
+        }
         console.log(arr);
+    }
+
+    function OpenTextBox() {
+        const nameVal = document.querySelector('.company');
+        const getEmailVal = document.querySelector('.position');
+        const getPhoneVal = document.querySelector('.tasks');
+        const nameDiv = document.createElement('input');
+        const emailDiv = document.createElement('input');
+        const phoneDiv = document.createElement('input');
+        nameVal.parentNode.replaceChild(nameDiv, nameVal);
+        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
+        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
+        nameDiv.classList.add('company');
+        emailDiv.classList.add('position');
+        phoneDiv.classList.add('tasks');
+        nameDiv.value = arr[0];
+        emailDiv.value = arr[1];
+        phoneDiv.value = arr[2];
     }
 
     return (
@@ -57,7 +142,7 @@ function Practical() {
             <label className='positionLabel'>
                 Position:
                 <input type='text' className='position'></input>
-                <button className='editPractical'>Edit</button>
+                <button className='editPractical' onClick={OpenTextBox}>Edit</button>
             </label>
             <label className='jobLabel'>
                 Job Tasks:
@@ -95,8 +180,7 @@ function General() {
             nextItem(prev => prev.concat(getPhoneVal));
         }
         if (!arr[0]) {
-            nextItem(prev => prev.concat(getNameVal));
-            arr.splice(0, 1 ,getNameVal);
+            arr.splice(0, 1, getNameVal);
         }
         if (!arr[1]) {
             console.log(getEmailVal)
@@ -127,6 +211,10 @@ function General() {
         nameDiv.textContent = arr[0];
         emailDiv.textContent = arr[1];
         phoneDiv.textContent = arr[2];
+
+        // const studyVal = document.querySelector('.study');
+        // const studyDiv = document.createElement('div');
+        // studyVal.parentNode.replaceChild(studyDiv, studyVal);
     }
 
     function OpenTextBox() {
