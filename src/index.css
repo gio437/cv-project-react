@@ -31,6 +31,7 @@ code {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 2rem;
+  box-shadow: 1px 1px 1px black;
 }
 
 .education {
@@ -38,6 +39,7 @@ code {
   flex-direction: column;
   background-color: white;
   padding: 2rem;
+  box-shadow: 1px 1px 1px black;
 }
 
 .practical {
@@ -47,6 +49,7 @@ code {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 2rem;
+  box-shadow: 1px 1px 1px black;
 }
 
 .preview {
