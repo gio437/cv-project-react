@@ -1,5 +1,5 @@
 body {
-  background-color: gray;
+  background-color: #f8f9fa;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -22,16 +22,26 @@ code {
 .general {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 2rem;
 }
 
 .education {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  padding: 2rem;
 }
 
 .practical {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem;
 }
 
 .preview {
