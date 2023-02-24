@@ -1,6 +1,6 @@
 To get started with the CV Generator application, you will need to do the following:
 
-open https://gio437.github.io/cv-project-react/ in a web browser of your choice.
+Open https://gio437.github.io/cv-project-react/ in a web browser of your choice.
 The CV Generator should appear automatically, and you will be able to fill in your personal and professional information using the input fields.
 You can preview your CV as you fill in the information
 
