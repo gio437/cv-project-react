@@ -76,7 +76,7 @@ function Education() {
 
     return (
     <div className='education'>
-           <h1>Education</h1>
+           <h2>Education</h2>
             <label className='schoolLabel'>
                 School:
                 <input type='text' className='school'></input>
@@ -168,7 +168,7 @@ function Practical() {
 
     return (
     <div className='practical'>
-           <h1>Practical</h1>
+           <h2>Practical</h2>
             <label className='companyLabel'>
                 Company:
                 <input type='text' className='company'></input>
@@ -269,7 +269,8 @@ function General() {
     return (
         <div className='general'>
            {/* <button className='preview' onClick={ShowPreview}>Preview</button> */}
-           <h1>General</h1>
+           <h1>CV Generator</h1>
+           <h2>General</h2>
             <label className='nameLabel'>
                 Name:
                 <input type='text' className='name'></input>
