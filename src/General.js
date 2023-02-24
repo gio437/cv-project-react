@@ -1,60 +1,77 @@
 import React from 'react';
 
 function Education() {
-    const [arr, nextItem] = React.useState([]);
+    const [educArr, nextItem] = React.useState([]);
 
     function MoveArr() {
         const school = document.querySelector('.school').value;
         const study = document.querySelector('.study').value;
         const studyDate = document.querySelector('.studyDate').value;
 
-        if (arr[0] && school !== undefined) {
+        if (educArr[0] && school !== undefined) {
             console.log(school);
-            arr.splice(0, 1, school);
-            //nextItem(prev => prev.concat(getNameVal));
+            educArr.splice(0, 1, school);
         }
-        if (arr[1] && study !== undefined) {
-            arr.splice(1, 1, study);
-            //nextItem(prev => prev.concat(getEmailVal));
+        if (educArr[1] && study !== undefined) {
+            educArr.splice(1, 1, study);
         }
-        if (arr[2] && studyDate !== undefined) {
-            arr.splice(2, 1, studyDate);
-            //nextItem(prev => prev.concat(getPhoneVal));
+        if (educArr[2] && studyDate !== undefined) {
+            educArr.splice(2, 1, studyDate);
         }
-        if (!arr[0] && !arr[1] && !arr[2]) {
+        if (!educArr[0] && !educArr[1] && !educArr[2]) {
             nextItem(prev => prev.concat(school))
             nextItem(prev => prev.concat(study))
             nextItem(prev => prev.concat(studyDate))
         }
-        if (!arr[0]) {
-            arr.splice(0, 1, school);
+        if (!educArr[0]) {
+            educArr.splice(0, 1, school);
         }
-        if (!arr[1]) {
+        if (!educArr[1]) {
             console.log(study)
-            arr.splice(1, 1, study);
+            educArr.splice(1, 1, study);
         }
-        if (!arr[2]) {
-            arr.splice(2, 1, studyDate);
+        if (!educArr[2]) {
+            educArr.splice(2, 1, studyDate);
         }
-        console.log(arr);
+        console.log(educArr);
+
+         // will display values in html
+         const schoolTextVal = document.querySelector('.school');
+         const studyTextVal = document.querySelector('.study');
+         const studyDateVal = document.querySelector('.studyDate');
+         const schoolDiv = document.createElement('div');
+         const studyTextDiv = document.createElement('div');
+         const studyDateDiv = document.createElement('div');
+         schoolTextVal.parentNode.replaceChild(schoolDiv, schoolTextVal);
+         studyTextVal.parentNode.replaceChild(studyTextDiv, studyTextVal);
+         studyDateVal.parentNode.replaceChild(studyDateDiv, studyDateVal);
+         schoolDiv.classList.add('school');
+         studyTextDiv.classList.add('study');
+         studyDateDiv.classList.add('studyDate');
+         schoolDiv.textContent = educArr[0];
+         studyTextDiv.textContent = educArr[1];
+         studyDateDiv.textContent = educArr[2];
     }
 
     function OpenTextBox() {
-        const nameVal = document.querySelector('.school');
-        const getEmailVal = document.querySelector('.study');
-        const getPhoneVal = document.querySelector('.studyDate');
-        const nameDiv = document.createElement('input');
-        const emailDiv = document.createElement('input');
-        const phoneDiv = document.createElement('input');
-        nameVal.parentNode.replaceChild(nameDiv, nameVal);
-        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
-        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
-        nameDiv.classList.add('school');
-        emailDiv.classList.add('study');
-        phoneDiv.classList.add('studyDate');
-        nameDiv.value = arr[0];
-        emailDiv.value = arr[1];
-        phoneDiv.value = arr[2];
+        const schoolVal = document.querySelector('.school');
+        const studyVal = document.querySelector('.study');
+        const studyDateVal = document.querySelector('.studyDate');
+        const schoolDiv = document.createElement('input');
+        const studyDiv = document.createElement('input');
+        const studyDateDiv = document.createElement('input');
+        schoolVal.parentNode.replaceChild(schoolDiv, schoolVal);
+        studyVal.parentNode.replaceChild(studyDiv, studyVal);
+        studyDateVal.parentNode.replaceChild(studyDateDiv, studyDateVal);
+        schoolDiv.classList.add('school');
+        studyDiv.classList.add('study');
+        studyDateDiv.classList.add('studyDate');
+        if (studyDateVal.value === undefined) {
+            studyDateDiv.type = 'date';
+        }
+        schoolDiv.value = educArr[0];
+        studyDiv.value = educArr[1];
+        studyDateDiv.value = educArr[2];
     }
 
     return (
@@ -79,57 +96,74 @@ function Education() {
 }
 
 function Practical() {
-    const [arr, nextItem] = React.useState([]);
+    const [practArr, nextItem] = React.useState([]);
 
-    function MoveArr() {
-        const getNameVal = document.querySelector('.company').value;
-        const getEmailVal = document.querySelector('.position').value;
-        const getPhoneVal = document.querySelector('.tasks').value;
+    function MovePracticalArr() {
+        const companyVal = document.querySelector('.company').value;
+        const positionVal = document.querySelector('.position').value;
+        const tasksVal = document.querySelector('.tasks').value;
 
-        if (arr[0] && getNameVal !== undefined) {
-            console.log(getNameVal);
-            arr.splice(0, 1, getNameVal);
+        if (practArr[0] && companyVal !== undefined) {
+            console.log(companyVal);
+            practArr.splice(0, 1, companyVal);
         }
-        if (arr[1] && getEmailVal !== undefined) {
-            arr.splice(1, 1, getEmailVal);
+        if (practArr[1] && positionVal !== undefined) {
+            practArr.splice(1, 1, positionVal);
         }
-        if (arr[2] && getPhoneVal !== undefined) {
-            arr.splice(2, 1, getPhoneVal);
+        if (practArr[2] && tasksVal !== undefined) {
+            practArr.splice(2, 1, tasksVal);
         }
-        if (!arr[0] && !arr[1] && !arr[2]) {
-            nextItem(prev => prev.concat(getNameVal));
-            nextItem(prev => prev.concat(getEmailVal));
-            nextItem(prev => prev.concat(getPhoneVal));
+        if (!practArr[0] && !practArr[1] && !practArr[2]) {
+            nextItem(prev => prev.concat(companyVal));
+            nextItem(prev => prev.concat(positionVal));
+            nextItem(prev => prev.concat(tasksVal));
         }
-        if (!arr[0]) {
-            arr.splice(0, 1, getNameVal);
+        if (!practArr[0]) {
+            practArr.splice(0, 1, companyVal);
         }
-        if (!arr[1]) {
-            console.log(getEmailVal)
-            arr.splice(1, 1, getEmailVal);
+        if (!practArr[1]) {
+            console.log(positionVal)
+            practArr.splice(1, 1, positionVal);
         }
-        if (!arr[2]) {
-            arr.splice(2, 1, getPhoneVal);
+        if (!practArr[2]) {
+            practArr.splice(2, 1, tasksVal);
         }
-        console.log(arr);
+        console.log(practArr);
+
+         // will display values in html
+         const nameVal = document.querySelector('.company');
+         const emailTextVal = document.querySelector('.position');
+         const phoneTextVal = document.querySelector('.tasks');
+         const nameDiv = document.createElement('div');
+         const emailDiv = document.createElement('div');
+         const phoneDiv = document.createElement('div');
+         nameVal.parentNode.replaceChild(nameDiv, nameVal);
+         emailTextVal.parentNode.replaceChild(emailDiv, emailTextVal);
+         phoneTextVal.parentNode.replaceChild(phoneDiv, phoneTextVal);
+         nameDiv.classList.add('company');
+         emailDiv.classList.add('position');
+         phoneDiv.classList.add('tasks');
+         nameDiv.textContent = practArr[0];
+         emailDiv.textContent = practArr[1];
+         phoneDiv.textContent = practArr[2];
     }
 
-    function OpenTextBox() {
-        const nameVal = document.querySelector('.company');
+    function OpenCompanyTextBox() {
+        const companyBox = document.querySelector('.company');
         const getEmailVal = document.querySelector('.position');
         const getPhoneVal = document.querySelector('.tasks');
-        const nameDiv = document.createElement('input');
-        const emailDiv = document.createElement('input');
-        const phoneDiv = document.createElement('input');
-        nameVal.parentNode.replaceChild(nameDiv, nameVal);
-        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
-        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
-        nameDiv.classList.add('company');
-        emailDiv.classList.add('position');
-        phoneDiv.classList.add('tasks');
-        nameDiv.value = arr[0];
-        emailDiv.value = arr[1];
-        phoneDiv.value = arr[2];
+        const companyInput = document.createElement('input');
+        const emailInput = document.createElement('input');
+        const phoneInput = document.createElement('input');
+        companyBox.parentNode.replaceChild(companyInput, companyBox);
+        getEmailVal.parentNode.replaceChild(emailInput, getEmailVal);
+        getPhoneVal.parentNode.replaceChild(phoneInput, getPhoneVal);
+        companyInput.classList.add('company');
+        emailInput.classList.add('position');
+        phoneInput.classList.add('tasks');
+        companyInput.value = practArr[0];
+        emailInput.value = practArr[1];
+        phoneInput.value = practArr[2];
     }
 
     return (
@@ -142,19 +176,19 @@ function Practical() {
             <label className='positionLabel'>
                 Position:
                 <input type='text' className='position'></input>
-                <button className='editPractical' onClick={OpenTextBox}>Edit</button>
+                <button className='editPractical' onClick={OpenCompanyTextBox}>Edit</button>
             </label>
             <label className='jobLabel'>
                 Job Tasks:
                 <input type='text' className='tasks'></input>
             </label>
-            <input type='submit' className='submitPractical' onClick={MoveArr}></input>
+            <input type='submit' className='submitPractical' onClick={MovePracticalArr}></input>
         </div>
     )
 }
 
 function General() {
-    let [arr, nextItem] = React.useState([]);
+    const [arr, nextItem] = React.useState([]);
 
     function MoveArr() {
         const getNameVal = document.querySelector('.name').value;
@@ -190,20 +224,17 @@ function General() {
             arr.splice(2, 1, getPhoneVal);
         }
         console.log(arr);
-    }
 
-    function ShowPreview() {
-        console.log(arr);
-        // change back to edit by making a new function
+        // will display values in html
         const nameVal = document.querySelector('.name');
-        const getEmailVal = document.querySelector('.email');
-        const getPhoneVal = document.querySelector('.phone');
+        const emailTextVal = document.querySelector('.email');
+        const phoneTextVal = document.querySelector('.phone');
         const nameDiv = document.createElement('div');
         const emailDiv = document.createElement('div');
         const phoneDiv = document.createElement('div');
         nameVal.parentNode.replaceChild(nameDiv, nameVal);
-        getEmailVal.parentNode.replaceChild(emailDiv, getEmailVal);
-        getPhoneVal.parentNode.replaceChild(phoneDiv, getPhoneVal);
+        emailTextVal.parentNode.replaceChild(emailDiv, emailTextVal);
+        phoneTextVal.parentNode.replaceChild(phoneDiv, phoneTextVal);
         nameDiv.classList.add('name');
         phoneDiv.classList.add('phone');
         emailDiv.classList.add('email');
@@ -237,7 +268,7 @@ function General() {
 
     return (
         <div className='general'>
-           <button className='preview' onClick={ShowPreview}>Preview</button>
+           {/* <button className='preview' onClick={ShowPreview}>Preview</button> */}
            <h1>General</h1>
             <label className='nameLabel'>
                 Name:
@@ -253,10 +284,8 @@ function General() {
                 <input type='text' className='phone'></input>
             </label>
             <input type='submit' className='submitGeneral' onClick={MoveArr}></input>
-            <Education />
-            <Practical />
         </div>
     )
 }
 
-export default General;
+export {General, Education, Practical};

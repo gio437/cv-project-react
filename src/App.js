@@ -1,10 +1,12 @@
 import './App.css';
-import General from './General.js'
+import {General, Education, Practical} from './General.js'
 
-function App() {
+function App(props) {
   return (
     <div>
       <General />
+      <Education />
+      <Practical />
     </div>
   );
 }
