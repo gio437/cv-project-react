@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/%7Bcv-project-react%7D/static/css/main.63070fe0.css",
-    "main.js": "/%7Bcv-project-react%7D/static/js/main.db30f254.js",
-    "static/js/787.34a20539.chunk.js": "/%7Bcv-project-react%7D/static/js/787.34a20539.chunk.js",
-    "index.html": "/%7Bcv-project-react%7D/index.html",
-    "main.63070fe0.css.map": "/%7Bcv-project-react%7D/static/css/main.63070fe0.css.map",
-    "main.db30f254.js.map": "/%7Bcv-project-react%7D/static/js/main.db30f254.js.map",
-    "787.34a20539.chunk.js.map": "/%7Bcv-project-react%7D/static/js/787.34a20539.chunk.js.map"
+    "main.css": "/cv-project-react/static/css/main.63070fe0.css",
+    "main.js": "/cv-project-react/static/js/main.815e4f74.js",
+    "static/js/787.34a20539.chunk.js": "/cv-project-react/static/js/787.34a20539.chunk.js",
+    "index.html": "/cv-project-react/index.html",
+    "main.63070fe0.css.map": "/cv-project-react/static/css/main.63070fe0.css.map",
+    "main.815e4f74.js.map": "/cv-project-react/static/js/main.815e4f74.js.map",
+    "787.34a20539.chunk.js.map": "/cv-project-react/static/js/787.34a20539.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.63070fe0.css",
-    "static/js/main.db30f254.js"
+    "static/js/main.815e4f74.js"
   ]
 }
