@@ -32,6 +32,7 @@ code {
   border-top-right-radius: 20px;
   padding: 2rem;
   box-shadow: 1px 1px 1px black;
+  width: 20rem;
 }
 
 .education {
@@ -119,4 +120,19 @@ code {
 .submitPractical {
   margin-top: 15px;
   width: 70px;
+}
+
+.editGeneral {
+  position: absolute;
+  margin-left: 15rem;
+}
+
+.editEducation {
+  position: absolute;
+  margin-left: 16rem;
+}
+
+.editPractical {
+  position: absolute;
+  margin-left: 17rem;
 }

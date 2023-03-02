@@ -66,6 +66,16 @@ function Education() {
         schoolDiv.classList.add('school');
         studyDiv.classList.add('study');
         studyDateDiv.classList.add('studyDate');
+        if (educArr[0] === undefined) {
+            educArr[0] = '';
+        }
+        if (educArr[1] === undefined) {
+            educArr[1] = '';
+        }
+        if (educArr[2] === undefined || educArr[2] === '') {
+            educArr[2] = '';
+            studyDateDiv.type = 'date';
+        }
         if (studyDateVal.value === undefined) {
             studyDateDiv.type = 'date';
         }
@@ -161,6 +171,15 @@ function Practical() {
         companyInput.classList.add('company');
         emailInput.classList.add('position');
         phoneInput.classList.add('tasks');
+        if (practArr[0] === undefined) {
+            practArr[0] = '';
+        }
+        if (practArr[1] === undefined) {
+            practArr[1] = '';
+        }
+        if (practArr[2] === undefined) {
+            practArr[2] = '';
+        }
         companyInput.value = practArr[0];
         emailInput.value = practArr[1];
         phoneInput.value = practArr[2];
@@ -261,6 +280,15 @@ function General() {
         nameDiv.classList.add('name');
         phoneDiv.classList.add('phone');
         emailDiv.classList.add('email');
+        if (arr[0] === undefined) {
+            arr[0] = '';
+        }
+        if (arr[1] === undefined) {
+            arr[1] = '';
+        }
+        if (arr[2] === undefined) {
+            arr[2] = '';
+        }
         nameDiv.value = arr[0];
         emailDiv.value = arr[1];
         phoneDiv.value = arr[2];
