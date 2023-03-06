@@ -1,7 +1,9 @@
 import './App.css';
-import {General, Education, Practical} from './General.js'
+import General from './components/General';
+import Education from './components/Education';
+import Practical from './components/Practical';
 
-function App(props) {
+function App() {
   return (
     <div>
       <General />
