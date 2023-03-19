@@ -94,13 +94,15 @@ export default function Education() {
             <label className='studyLabel'>
                 Study:
                 <input type='text' className='study'></input>
-                <button className='editEducation' onClick={OpenTextBox}>Edit</button>
             </label>
             <label className='gradLabel'>
                 Grad Date:
                 <input type='date' className='studyDate'></input>
             </label>
-            <input type='submit' className='submitEducation' onClick={MoveArr}></input>
+            <div class='btn'>
+                <button className='editEducation' onClick={OpenTextBox}>Edit</button>
+                <input type='submit' className='submitEducation' onClick={MoveArr}></input>
+            </div>
         </div>
     )
 }

@@ -97,13 +97,15 @@ export default function General() {
             <label className='emailLabel'>
                 Email:
                 <input type='text' className='email'></input>
-                <button className='editGeneral' onClick={OpenTextBox}>Edit</button>
             </label>
             <label className='phoneLabel'>
                 Phone:
                 <input type='text' className='phone'></input>
             </label>
-            <input type='submit' className='submitGeneral' onClick={MoveArr}></input>
+            <div class='btn'>
+                <button className='editGeneral' onClick={OpenTextBox}>Edit</button>
+                <input type='submit' className='submitGeneral' onClick={MoveArr}></input>
+            </div>
         </div>
     )
 }

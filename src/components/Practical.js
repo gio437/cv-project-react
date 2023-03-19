@@ -91,13 +91,15 @@ export default function Practical() {
             <label className='positionLabel'>
                 Position:
                 <input type='text' className='position'></input>
-                <button className='editPractical' onClick={OpenCompanyTextBox}>Edit</button>
             </label>
             <label className='jobLabel'>
                 Job Tasks:
                 <input type='text' className='tasks'></input>
             </label>
-            <input type='submit' className='submitPractical' onClick={MoveArr}></input>
+            <div class='btn'>
+                <button className='editPractical' onClick={OpenCompanyTextBox}>Edit</button>
+                <input type='submit' className='submitPractical' onClick={MoveArr}></input>
+            </div>
         </div>
     )
 }

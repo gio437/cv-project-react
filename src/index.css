@@ -1,138 +1,140 @@
 body {
-  background-color: #f8f9fa;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  display: flex;
-  justify-content: center;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
 .general {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding: 2rem;
-  box-shadow: 1px 1px 1px black;
-  width: 20rem;
-}
-
-.education {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 1px 1px 1px black;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .practical {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 2rem;
-  box-shadow: 1px 1px 1px black;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.preview {
-  width: 80px;
-  margin-left: 5rem;
-  margin-bottom: 1rem;
-}
-
-.nameLabel {
+.education {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.emailLabel {
+.btn {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
-.phoneLabel {
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
   display: flex;
-  gap: 13px;
+  flex-direction: column;
+  font-size: 16px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
-
-.schoolLabel {
-  display: flex;
-  gap: 1rem;
+input[type='text'] {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
 }
 
-.studyLabel {
-  display: flex;
-  gap: 23px;
+button {
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.gradLabel {
-  display: flex;
-  gap: 1rem;
+button:hover {
+  background-color: #3c7bd4;
 }
 
-
-.companyLabel {
-  display: flex;
-  gap: 1rem;
-}
-
-.positionLabel {
-  display: flex;
-  gap: 28px;
-}
-
-.jobLabel {
-  display: flex;
-  gap: 13px;
-}
-
-
-.submitGeneral {
-  margin-top: 15px;
-  width: 70px;
-}
-
-.submitEducation {
-  margin-top: 15px;
-  width: 70px;
-}
-
-.submitPractical {
-  margin-top: 15px;
-  width: 70px;
-}
-
-.editGeneral {
-  position: absolute;
-  margin-left: 15rem;
-}
-
-.editEducation {
-  position: absolute;
-  margin-left: 16rem;
+input[type='submit'] {
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .editPractical {
-  position: absolute;
-  margin-left: 17rem;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 22px;
+  width: 5rem;
+  height: 2rem;
+}
+
+.editEducation {
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 22px;
+  width: 5rem;
+  height: 2rem;
+}
+
+.editGeneral {
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 22px;
+  width: 5rem;
+  height: 2rem;
+}
+
+input[type='submit']:hover {
+  background-color: #3c7bd4;
 }
