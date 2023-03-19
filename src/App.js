@@ -6,6 +6,7 @@ import Practical from './components/Practical';
 function App() {
   return (
     <div>
+      <h1 className='head'>CV Generator</h1>
       <General />
       <Education />
       <Practical />

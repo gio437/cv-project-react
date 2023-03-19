@@ -86,9 +86,9 @@ export default function General() {
     }
 
     return (
+        <div>
         <div className='general'>
            {/* <button className='preview' onClick={ShowPreview}>Preview</button> */}
-           <h1>CV Generator</h1>
            <h2>General</h2>
             <label className='nameLabel'>
                 Name:
@@ -106,6 +106,7 @@ export default function General() {
                 <button className='editGeneral' onClick={OpenTextBox}>Edit</button>
                 <input type='submit' className='submitGeneral' onClick={MoveArr}></input>
             </div>
+        </div>
         </div>
     )
 }

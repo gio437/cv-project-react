@@ -15,6 +15,11 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.head {
+  display: flex;
+  justify-content: center;
+}
+
 .practical {
   display: flex;
   flex-direction: column;
